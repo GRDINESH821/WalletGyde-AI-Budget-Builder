@@ -1,3 +1,4 @@
+import "./env";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -56,12 +57,18 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  // Serve the app on PORT (default 5000)
+  const port = Number(process.env.PORT) || 5000;
   const host = process.env.HOST || "localhost";
   
+  server.on("error", (err: any) => {
+    if (err && (err as any).code === "EADDRINUSE") {
+      log(`Port ${port} is already in use. Set a different PORT in your .env or stop the other process.`);
+      process.exit(1);
+    }
+    throw err;
+  });
+
   server.listen(port, host, () => {
     log(`serving on http://${host}:${port}`);
   });
