@@ -1,0 +1,179 @@
+Replit Prompt: Walletgyde Budget & Debt Landing Page
+Scope & Constraints
+
+In Scope (must include):
+
+Zero-based budgeting
+
+50/30/20 guideline
+
+Envelope/sinking funds
+
+Emergency fund basics
+
+Tracking fixed vs. variable expenses
+
+Debt snowball vs. avalanche
+
+Interest/APR basics
+
+Minimum payments & utilization
+
+Payoff timelines
+
+Amortization basics
+
+DTI (debt-to-income)
+
+Out of Scope (must exclude):
+
+Investing advice (stocks, crypto, retirement projections)
+
+Tax strategies
+
+Legal advice
+
+Compliance & Standards:
+
+Educational-only framework (not financial advice).
+
+Adheres to financial literacy best practices (FINRA Foundation, CFPB guidelines).
+
+Data security: local encryption, private by design, no credit pulls.
+
+Transparency: no promises of guaranteed savings or outcomes.
+
+Disclaimer: “For educational use only. Not financial advice.”
+
+Page Structure
+1. Hero
+
+H1 (≤9 words): Punchy headline about taking control of budget + debt.
+
+Subhead: Promise a step-by-step plan, not lectures.
+
+Primary CTA: “Start my plan”
+
+Secondary CTA: “See how it works”
+
+Trust Chips: “No credit pull” · “Private by design” · “Takes ~3 minutes”
+
+2. How It Works (3 Steps)
+
+Step 1: Connect or enter income, bills, debts.
+
+Step 2: AI builds monthly budget + debt order (snowball/avalanche) with payoff dates.
+
+Step 3: Track progress; auto-adjust categories and due-date reminders.
+
+3. Budgeting & Debt Principles (educational blurbs, skimmable)
+
+Zero-based budgeting
+
+50/30/20 rule
+
+Sinking funds & emergency fund
+
+Snowball vs. Avalanche (when to use each)
+
+APR & minimums
+
+Fixed vs. variable expenses
+
+DTI explained
+
+Each = 2–3 sentence plain-language blurbs.
+
+4. Budget Builder Agent (powered by Walletgyde AI 🤖)
+
+Sticky chat widget: bottom-right, avatar visible, quick-reply chips.
+
+Persona: Friendly, direct, non-judgmental. Plain language, light emojis only when helpful.
+
+Greeting Script (≤3 turns):
+
+“I’ll build your budget + debt plan in minutes.”
+
+Ask: monthly take-home, fixed bills, debts (balance/APR/min).
+
+Offer Snowball (motivation) or Avalanche (interest savings). Default if skipped.
+
+Output:
+
+Monthly budget categories + targets.
+
+Debt order, projected payoff dates, interest saved vs. minimums.
+
+One next action (e.g., “Set $300 Snowball Payment on 28th”).
+
+Safety: Never ask SSN/logins. Show privacy link.
+
+Controls: Quick replies: “Edit numbers” · “Explain this” · “Switch method.”
+
+5. Proof & Credibility
+
+Numbers: “Built 120k+ sample budgets in testing.”
+
+Security Notes: Local encryption · No selling personal data.
+
+6. CTA Footer
+
+Reassert value: “Take control with an AI-powered plan.”
+
+Button: “Start my plan”
+
+7. Legal/Disclaimer
+
+One sentence: “Educational use only; results vary; not investment or legal advice.”
+
+Copy Guidelines
+
+Short sentences, plain language.
+
+No jargon without a 1-line explainer.
+
+Avoid shame/friction words.
+
+Use action verbs: Build, Track, Pay down.
+
+Numerals/timeframes preferred (“in ~3 minutes”).
+
+SEO keywords: budget planner, zero-based budget, debt snowball, debt avalanche, payoff calculator, monthly budget.
+
+Visual & UI Notes
+
+Style: Clean, modern card layout · mobile-first · generous whitespace.
+
+Bot widget: anchored bottom-right with avatar 🤖 + unread badge.
+
+Iconography: bills, calendar, pie/bar charts, lock (privacy).
+
+Accessibility: AA contrast, keyboard navigable, aria labels, alt text for charts.
+
+Deliverables
+
+Final landing-page copy (H1, H2, body, CTAs, FAQ).
+
+Budget Builder Agent greeting + first-run script + quick-reply labels.
+
+Feature bullets + tooltip microcopy.
+
+One-sentence disclaimer.
+
+Metadata: title (≤60 chars), meta description (≤155 chars).
+
+Mobile UI Chatbot Display
+
+Section: At least one full-width mobile mockup showing the Budget Builder Agent powered by Walletgyde AI in action.
+
+Chat Simulation Example:
+
+User: “List my debts.”
+
+Agent: “Got it. Balance: $5,000 @ 19% APR, $2,500 @ 8% APR, $1,200 @ 22% APR. Want to use Snowball (motivation) or Avalanche (save interest)?”
+
+User: “Snowball.”
+
+Agent: “✅ Plan built. Pay $300 on Card 3 first. Projected debt-free in 14 months.”
+
+UI Elements: typing indicator, reply chips (“Switch to Avalanche” · “Explain Snowball” · “Edit numbers”).

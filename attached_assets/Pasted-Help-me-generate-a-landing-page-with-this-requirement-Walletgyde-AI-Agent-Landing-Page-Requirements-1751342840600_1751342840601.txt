@@ -1,0 +1,167 @@
+Help me generate a landing page with this requirement: Walletgyde AI Agent Landing Page Requirements
+
+Hero Section
+✅ Headline / Tagline:
+ “It’s like having a financial coach in your pocket.”
+✅ Subheadline / Supporting line:
+ Trained on trusted, reputable financial APIs, Walletgyde AI provides you with precise, actionable financial education — unlike generic chatbots, it’s built to guide you with proven principles.
+✅ Call-to-Action (CTA) Button:
+Primary: “Join the Beta”
+
+
+Secondary (optional): “See a Demo”
+
+
+✅ Hero Visual:
+Illustration or animation of a smartphone showing the Walletgyde AI chat
+
+
+Incorporate the star Walletgyde AI logo
+
+
+
+About Section
+✅ Brief Description
+Summarize what Walletgyde AI does in one short paragraph:
+ “Walletgyde AI empowers you with personalized, educational financial insights based on respected frameworks and connected to real financial data. It’s the future of financial coaching — in your pocket.”
+
+
+✅ Differentiator Bullet Points
+Built on reliable financial data, not just general language models
+
+
+Designed with LLM guardrails to ensure safe and educational financial responses
+
+
+Focus on actionable, proven frameworks, not just generic tips
+
+
+
+Key Features / Modules Section
+Title: “What Walletgyde AI Can Help You With”
+List of conversational modules:
+✅ Budgeting Coach
+Plan zero-based budgets
+
+
+Visualize 50/30/20 spending
+
+
+Track needs vs. wants
+
+
+✅ Debt Coach
+Model Snowball vs. Avalanche methods
+
+
+Calculate repayment strategies
+
+
+Manage credit utilization
+
+
+✅ FIRE Tracker
+Project your Financial Independence timeline
+
+
+Model inflation-adjusted savings
+
+
+Review compounding scenarios
+
+
+✅ Market Pulse & Investment Insights
+Pull live market data from IEX Cloud, Alpaca, Tiingo
+
+
+Compare your income to S&P trends
+
+
+Monitor portfolio risk alerts
+
+
+✅ Real Estate Insights
+Tap Zillow, Redfin, ATTOM APIs
+
+
+Estimate home equity
+
+
+Review rent-vs-buy market trends
+
+
+✅ Macroeconomic Agent
+Use FRED, TradingEconomics, GDP, CPI data
+
+
+Answer “Am I recession ready?”
+
+
+Watch inflation impacts on budgets
+
+
+
+Visual Examples (optional for design brief)
+Budget pie chart
+
+
+Debt repayment timeline
+
+
+Real-time market index ticker
+
+
+Equity bar chart
+
+
+Macroeconomic scorecard
+
+
+
+Comparison Section
+Title: Why not just use ChatGPT?
+✅ Bullets:
+Walletgyde AI is trained on specific, trusted financial APIs
+
+
+Walletgyde AI follows proven financial education frameworks
+
+
+ChatGPT provides general knowledge; Walletgyde delivers targeted, real-world financial learning
+
+
+✅ Visual: simple side-by-side graphic comparing Walletgyde AI to a generic chatbot
+
+Security & Guardrails Section
+✅ Short paragraph or callout box
+“Walletgyde AI uses educational financial principles only — we do not offer personalized investment advice. Always consult a licensed advisor before making major financial decisions.”
+
+
+✅ Compliance note:
+LLM Guardrails: “This is educational context, not personalized financial advice.”
+
+
+
+Call to Action
+✅ Repeat CTA at the bottom:
+ “Join the Beta — Experience Walletgyde AI Today”
+✅ Optional: newsletter signup or waitlist email form
+
+Tech Requirements
+✅ Fast, responsive (mobile-first design)
+ ✅ Accessible (clear fonts, color contrast)
+ ✅ Hosted on Netlify (initial) and easily deployable to Google Cloud later
+ ✅ Integrate a simple login/auth placeholder if needed for demonstration
+
+Design Inspiration (moodboard direction)
+Professional fintech style with a fresh, youthful vibe
+
+
+Clean typography
+
+
+Trust-centered colors (blues, greens, neutrals)
+
+
+AI/tech flourishes (star, chat icons, subtle animations)
+Let's use the mobile mockup as a mock up display in the landing page
