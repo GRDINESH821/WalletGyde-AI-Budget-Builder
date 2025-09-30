@@ -2,6 +2,8 @@ import { useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import BudgetBuilderSection from "@/components/budget-builder-section";
+import CommunityImpact from "@/components/community-impact";
+import SponsorsPartners from "@/components/sponsors-partners";
 import CTASection from "@/components/cta-section";
 import Footer from "@/components/footer";
 import EmailPopup from "@/components/EmailPopup";
@@ -42,6 +44,8 @@ export default function LandingPage() {
       <HeroSection onJoinBeta={scrollToCTA} onSeeDemo={handleSeeDemo} />
       
       <BudgetBuilderSection />
+      <CommunityImpact />
+      <SponsorsPartners />
       <div className="cta-section">
         <CTASection />
       </div>
