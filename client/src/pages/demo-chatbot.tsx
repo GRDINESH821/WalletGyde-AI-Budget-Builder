@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
 import { usePlaidLink } from "react-plaid-link";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import EmailPopup from "@/components/EmailPopup";
 
 interface DemoMessage {
   id: number;
@@ -20,6 +21,7 @@ export default function DemoChatbotPage() {
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [userEmail, setUserEmail] = useState("");
+  const [showEmailPopup, setShowEmailPopup] = useState(false);
   const [showUploadOptions, setShowUploadOptions] = useState(false);
   const [csvFile, setCsvFile] = useState<File | null>(null);
   const [isUploadingCsv, setIsUploadingCsv] = useState(false);
@@ -30,12 +32,12 @@ export default function DemoChatbotPage() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
-  // Get user email from sessionStorage and clear previous data
+  // Get user email from sessionStorage and initialize
   useEffect(() => {
     const email = sessionStorage.getItem('demoUserEmail');
     if (!email) {
-      // Redirect back to landing if no email
-      window.location.href = "/";
+      // Prompt for email if missing
+      setShowEmailPopup(true);
       return;
     }
     
@@ -72,6 +74,22 @@ export default function DemoChatbotPage() {
         });
       });
   }, []);
+
+  const handleEmailSubmit = (email: string) => {
+    sessionStorage.setItem('demoUserEmail', email);
+    setUserEmail(email);
+    setShowEmailPopup(false);
+    // Initialize conversation state for new user
+    loadMessages(email);
+  };
+
+  const handleCloseEmailPopup = () => {
+    setShowEmailPopup(false);
+    // If user cancels without providing email, navigate back to landing
+    if (!userEmail) {
+      window.location.href = "/";
+    }
+  };
 
   // Get linked accounts for this demo user
   const { data: linkedAccounts = [] } = useQuery<any[]>({
@@ -306,6 +324,11 @@ export default function DemoChatbotPage() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-50">
+      <EmailPopup 
+        isOpen={showEmailPopup}
+        onClose={handleCloseEmailPopup}
+        onEmailSubmit={handleEmailSubmit}
+      />
       {/* Header */}
       <div className="bg-white border-b px-4 py-3 flex items-center gap-3">
         <Link href="/">

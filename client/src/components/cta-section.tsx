@@ -103,7 +103,7 @@ export default function CTASection() {
               className="w-full bg-white text-[hsl(221,83%,53%)] px-8 py-4 text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg rounded-xl"
             >
               <Rocket className="w-5 h-5 mr-2" />
-              {signupMutation.isPending ? "Starting..." : "Start my plan"}
+              {signupMutation.isPending ? "Starting..." : "Subscribe for Early Access"}
             </Button>
           </form>
           
