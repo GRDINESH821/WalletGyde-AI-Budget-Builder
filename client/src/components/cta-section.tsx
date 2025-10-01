@@ -7,7 +7,11 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
-export default function CTASection() {
+interface CTASectionProps {
+  onSeeDemo?: () => void;
+}
+
+export default function CTASection({ onSeeDemo }: CTASectionProps) {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
@@ -98,7 +102,8 @@ export default function CTASection() {
               </div>
             </div>
             <Button
-              type="submit"
+              type={onSeeDemo ? "button" : "submit"}
+              onClick={onSeeDemo}
               disabled={signupMutation.isPending}
               className="w-full bg-white text-[hsl(221,83%,53%)] px-8 py-4 text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg rounded-xl"
             >

@@ -47,7 +47,7 @@ export default function LandingPage() {
       <CommunityImpact />
       <SponsorsPartners />
       <div className="cta-section">
-        <CTASection />
+        <CTASection onSeeDemo={handleSeeDemo} />
       </div>
       <Footer />
       

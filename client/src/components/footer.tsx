@@ -1,5 +1,5 @@
 import { Bot } from "lucide-react";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaGithub ,FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -25,25 +25,33 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://x.com/WalletGyde"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[hsl(221,83%,53%)] transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/walletgyde/posts/?feedView=all"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[hsl(221,83%,53%)] transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/walletgyde/"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[hsl(221,83%,53%)] transition-colors"
-                aria-label="GitHub"
+                aria-label="Instagram"
               >
-                <FaGithub className="w-5 h-5" />
+                <FaInstagram className="w-5 h-5" />
+              </a>
+
+              <a 
+                href="https://www.youtube.com/@walletgyde5634"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[hsl(221,83%,53%)] transition-colors"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="w-5 h-5" />
               </a>
             </div>
           </div>
