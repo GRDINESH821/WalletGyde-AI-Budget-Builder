@@ -15,10 +15,10 @@ const partners = [
   {
     name: "TBK Bank",
     logo: "/logos/colorado_enterprise_fund.png",
-    description: "Financial institution supporter"
+    description: "Community Lending Partner"
   },
   {
-    name: "Economic Literacy Colorado",
+    name: "Empowering Community Entrepreneurs",
     logo: "/logos/ECE.png",
     description: "Financial education advocate"
   }

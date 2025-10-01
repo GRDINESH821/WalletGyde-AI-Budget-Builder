@@ -4,15 +4,15 @@ import { Users, Calendar, MapPin } from "lucide-react";
 const events = [
   {
     id: 1,
-    title: "Budget Workshop — Alpine Bank",
+    title: "Denver Startup Week'24 Master Your Money Workshop",
     date: "Jan 2025",
     location: "Alpine Bank",
     image: "/workshops/alpine_workshop.png", // Add your image here
-    description: "Financial education workshop for Alpine Bank customers"
+    description: " Denver Startup Week'24 Master Your Money Workshop"
   },
   {
     id: 2,
-    title: "On Tap Credit Union Workshop",
+    title: "Colorado Startup Week'25 Financial Community Workshop",
     date: "Mar 2025", 
     location: "On Tap Credit Union",
     image: "/workshops/ontap_workshop.png", // Add your image here
@@ -20,7 +20,7 @@ const events = [
   },
   {
     id: 3,
-    title: "Denver Startup Week Panel",
+    title: "Ep:14 Economic Insights with Amy Sherman VP of Public Affairs at Junior Achievement - Rocky Mountain",
     date: "Sep 2025",
     location: "Denver Startup Week",
     image: "/workshops/denver_startup.png", // Add your image here
@@ -79,7 +79,7 @@ export default function CommunityImpact() {
                   {event.title}
                 </h3>
                 
-                <div className="flex items-center text-sm text-[hsl(215,16%,47%)] mb-2">
+                {/* <div className="flex items-center text-sm text-[hsl(215,16%,47%)] mb-2">
                   <Calendar className="w-4 h-4 mr-2" />
                   {event.date}
                 </div>
@@ -87,11 +87,11 @@ export default function CommunityImpact() {
                 <div className="flex items-center text-sm text-[hsl(215,16%,47%)] mb-3">
                   <MapPin className="w-4 h-4 mr-2" />
                   {event.location}
-                </div>
+                </div> */}
                 
-                <p className="text-sm text-[hsl(215,16%,47%)]">
+                {/* <p className="text-sm text-[hsl(215,16%,47%)]">
                   {event.description}
-                </p>
+                </p> */}
               </div>
             </motion.div>
           ))}
