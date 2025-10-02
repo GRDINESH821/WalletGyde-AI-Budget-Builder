@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send, Bot, User, ArrowLeft, Upload, CreditCard, FileSpreadsheet } from "lucide-react";
+import { Send, User, ArrowLeft, Upload, CreditCard, FileSpreadsheet } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
 import { usePlaidLink } from "react-plaid-link";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import EmailPopup from "@/components/EmailPopup";
+import RobotIcon from "@/components/RobotIcon";
 
 interface DemoMessage {
   id: number;
@@ -343,7 +344,7 @@ export default function DemoChatbotPage() {
         </Link>
         <div className="flex items-center gap-2 flex-1">
           <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-full flex items-center justify-center">
-            <Bot className="w-5 h-5 text-white" />
+            <RobotIcon className="text-white" size="md" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
           </div>
           <div>
             <h1 className="font-semibold text-gray-900">Budget Builder Agent</h1>
@@ -356,7 +357,7 @@ export default function DemoChatbotPage() {
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 ? (
           <div className="text-center text-gray-500 mt-8">
-            <Bot className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+            <RobotIcon className="mx-auto mb-4 text-gray-400" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
             <p>Welcome to Budget Builder Agent!</p>
             <p className="text-sm mt-2">Ask me anything about budgeting, saving, or financial planning.</p>
           </div>
@@ -378,7 +379,7 @@ export default function DemoChatbotPage() {
                 {message.role === "user" ? (
                   <User className="w-4 h-4 text-white" />
                 ) : (
-                  <Bot className="w-4 h-4 text-white" />
+                  <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                 )}
               </div>
               <div
@@ -397,7 +398,7 @@ export default function DemoChatbotPage() {
         {isLoading && (
           <div className="flex gap-3">
             <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-full flex items-center justify-center">
-              <Bot className="w-4 h-4 text-white" />
+              <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
             </div>
             <div className="bg-white border rounded-2xl px-4 py-2">
               <div className="flex items-center gap-1">
@@ -444,7 +445,7 @@ export default function DemoChatbotPage() {
               disabled={isLoading}
               className="flex items-center gap-2"
             >
-              <Bot className="w-4 h-4" />
+              <RobotIcon className="w-4 h-4" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               Analyze Transactions
             </Button>
           )}

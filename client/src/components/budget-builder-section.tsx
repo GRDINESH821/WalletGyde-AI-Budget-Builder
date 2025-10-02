@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Bot, Send, Shield, Lock, Database } from "lucide-react";
+import { Send, Shield, Lock, Database } from "lucide-react";
+import RobotIcon from "@/components/RobotIcon";
 
 const chatMessages = [
   {
@@ -47,14 +48,14 @@ export default function BudgetBuilderSection() {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center space-x-2 bg-[hsl(221,83%,53%)]/10 px-4 py-2 rounded-full mb-6">
-              <Bot className="w-4 h-4 text-[hsl(221,83%,53%)]" />
+              <RobotIcon className="text-[hsl(221,83%,53%)]" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               <span className="text-[hsl(221,83%,53%)] font-medium text-sm">Budget Builder Agent</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               Powered by{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(221,83%,53%)] to-[hsl(158,64%,52%)]">
-                Walletgyde AI 🤖
+                Walletgyde AI <RobotIcon className="inline ml-1" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               </span>
             </h2>
             
@@ -132,7 +133,7 @@ export default function BudgetBuilderSection() {
                     <div className="bg-gradient-to-r from-[hsl(221,83%,53%)] to-[hsl(158,64%,52%)] p-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                          <Bot className="w-4 h-4 text-white" />
+                          <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-white text-sm">Budget Builder</h3>
@@ -178,7 +179,7 @@ export default function BudgetBuilderSection() {
                           <div className="flex justify-start">
                             <div className="bg-white text-gray-800 shadow-sm border rounded-xl px-3 py-2">
                               <div className="flex items-center space-x-1 mb-1">
-                                <span className="text-xs">🤖</span>
+                                <RobotIcon className="text-xs" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                                 <span className="text-xs font-medium text-[hsl(221,83%,53%)]">Budget Builder</span>
                               </div>
                               <div className="flex space-x-1">

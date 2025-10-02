@@ -1,4 +1,5 @@
-import { Star, Bot, CheckCircle, XCircle } from "lucide-react";
+import { Star, CheckCircle, XCircle } from "lucide-react";
+import RobotIcon from "@/components/RobotIcon";
 import { motion } from "framer-motion";
 
 const comparisons = [
@@ -57,7 +58,7 @@ export default function ComparisonSection() {
             <div className="flex items-center justify-between p-6 bg-gray-50 rounded-2xl opacity-60">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gray-400 rounded-xl flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-white" />
+                  <RobotIcon className="text-white" size="md" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Generic Chatbot</h4>

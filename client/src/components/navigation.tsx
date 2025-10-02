@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Bot, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import RobotIcon from "@/components/RobotIcon";
 
 interface NavigationProps {
   onSeeDemo: () => void;
@@ -39,7 +40,7 @@ export default function Navigation({ onSeeDemo }: NavigationProps) {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-lg flex items-center justify-center">
-              <Bot className="w-4 h-4 text-white" />
+                <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
             </div>
             <span className="text-xl font-bold text-[hsl(222,47%,11%)]">
               Budget Builder Agent

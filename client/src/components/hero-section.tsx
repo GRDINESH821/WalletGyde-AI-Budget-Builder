@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
+import RobotIcon from "@/components/RobotIcon";
 
 
 interface HeroSectionProps {
@@ -27,7 +28,7 @@ export default function HeroSection({ onJoinBeta, onSeeDemo }: HeroSectionProps)
           >
             <div className="inline-flex items-center space-x-2 bg-[hsl(221,83%,53%)]/10 px-4 py-2 rounded-full mb-6">
               <Star className="w-4 h-4 text-[hsl(221,83%,53%)] fill-[hsl(221,83%,53%)]" />
-              <span className="text-[hsl(221,83%,53%)] font-medium text-sm">Budget Builder Agent 🤖</span>
+              <span className="text-[hsl(221,83%,53%)] font-medium text-sm">Budget Builder Agent <RobotIcon className="inline ml-1" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" /></span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">

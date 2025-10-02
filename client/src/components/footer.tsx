@@ -1,4 +1,5 @@
 import { Bot } from "lucide-react";
+import RobotIcon from "@/components/RobotIcon";
 import { FaTwitter, FaLinkedin, FaGithub ,FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-lg flex items-center justify-center">
-                <Bot className="w-4 h-4 text-white" />
+                <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               </div>
               <span className="text-xl font-bold">Budget Builder Agent</span>
             </div>

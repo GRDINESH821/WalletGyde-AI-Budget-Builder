@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Bot, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import RobotIcon from "@/components/RobotIcon";
 
 interface EmailPopupProps {
   isOpen: boolean;
@@ -64,7 +65,7 @@ export default function EmailPopup({ isOpen, onClose, onEmailSubmit }: EmailPopu
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-[hsl(221,83%,53%)] rounded-2xl">
-            <Bot className="w-8 h-8 text-white" />
+            <RobotIcon className="text-white" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
           </div>
           <DialogTitle className="text-center text-xl font-bold">
             Try Budget Builder Agent Demo
