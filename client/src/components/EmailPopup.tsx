@@ -64,8 +64,8 @@ export default function EmailPopup({ isOpen, onClose, onEmailSubmit }: EmailPopu
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-[hsl(221,83%,53%)] rounded-2xl">
-            <RobotIcon className="text-white" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4">
+            <RobotIcon className="w-16 h-16" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
           </div>
           <DialogTitle className="text-center text-xl font-bold">
             Try Budget Builder Agent Demo

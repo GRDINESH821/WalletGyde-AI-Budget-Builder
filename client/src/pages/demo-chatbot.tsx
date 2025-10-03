@@ -343,8 +343,8 @@ export default function DemoChatbotPage() {
           </Button>
         </Link>
         <div className="flex items-center gap-2 flex-1">
-          <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-full flex items-center justify-center">
-            <RobotIcon className="text-white" size="md" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
+          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+            <RobotIcon className="w-8 h-8" size="md" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
           </div>
           <div>
             <h1 className="font-semibold text-gray-900">Budget Builder Agent</h1>
@@ -357,7 +357,7 @@ export default function DemoChatbotPage() {
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 ? (
           <div className="text-center text-gray-500 mt-8">
-            <RobotIcon className="mx-auto mb-4 text-gray-400" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
+            <RobotIcon className="mx-auto mb-4 w-12 h-12" size="lg" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
             <p>Welcome to Budget Builder Agent!</p>
             <p className="text-sm mt-2">Ask me anything about budgeting, saving, or financial planning.</p>
           </div>
@@ -371,9 +371,7 @@ export default function DemoChatbotPage() {
             >
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  message.role === "user"
-                    ? "bg-blue-500"
-                    : "bg-[hsl(221,83%,53%)]"
+                  message.role === "user" ? "bg-blue-500" : ""
                 }`}
               >
                 {message.role === "user" ? (
@@ -397,8 +395,8 @@ export default function DemoChatbotPage() {
         
         {isLoading && (
           <div className="flex gap-3">
-            <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-full flex items-center justify-center">
-              <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
+              <RobotIcon className="w-8 h-8" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
             </div>
             <div className="bg-white border rounded-2xl px-4 py-2">
               <div className="flex items-center gap-1">

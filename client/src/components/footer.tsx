@@ -16,8 +16,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-lg flex items-center justify-center">
-                <RobotIcon className="text-white" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                <RobotIcon className="w-8 h-8" size="sm" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               </div>
               <span className="text-xl font-bold">Budget Builder Agent</span>
             </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Send, Plus, MessageCircle, Trash2, Menu, X, LogOut, Star, Settings, Upload, FileSpreadsheet, CreditCard, Building, RefreshCw, AlertCircle } from "lucide-react";
+import { Send, Plus, MessageCircle, Trash2, Menu, X, LogOut, Settings, Upload, FileSpreadsheet, CreditCard, Building, RefreshCw, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/hooks/useAuth";
@@ -8,6 +8,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { motion, AnimatePresence } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import RobotIcon from "@/components/RobotIcon";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "wouter";
 import CsvUpload from "@/components/csv-upload";
@@ -374,8 +375,8 @@ export default function ChatbotPage() {
             <div className="p-4 border-b">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-lg flex items-center justify-center">
-                    <Star className="w-4 h-4 text-white fill-white" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                    <RobotIcon className="w-8 h-8" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                   </div>
                   <h2 className="text-lg font-semibold text-gray-900">Walletgyde AI</h2>
                 </div>
@@ -501,8 +502,8 @@ export default function ChatbotPage() {
               <Menu className="w-5 h-5" />
             </Button>
             <Link href="/landing" className="flex items-center space-x-3 cursor-pointer min-w-0">
-              <div className="w-8 h-8 bg-[hsl(221,83%,53%)] rounded-lg flex items-center justify-center flex-shrink-0">
-                <Star className="w-4 h-4 text-white fill-white" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <RobotIcon className="w-8 h-8" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               </div>
               <div className="min-w-0">
                 <h1 className="text-lg font-semibold text-gray-900 hover:text-[hsl(221,83%,53%)] transition-colors truncate">Walletgyde AI</h1>
@@ -516,8 +517,8 @@ export default function ChatbotPage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {!currentConversationId && (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-[hsl(221,83%,53%)] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-white fill-white" />
+              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <RobotIcon className="w-16 h-16" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Welcome to Walletgyde AI!
@@ -564,8 +565,8 @@ export default function ChatbotPage() {
                   >
                     {msg.role === "assistant" && (
                       <div className="flex items-center space-x-2 mb-2">
-                        <div className="w-6 h-6 bg-[hsl(221,83%,53%)] rounded flex items-center justify-center">
-                          <Star className="w-3 h-3 text-white fill-white" />
+                        <div className="w-6 h-6 rounded flex items-center justify-center">
+                          <RobotIcon className="w-6 h-6" useCustomIcon={true} customIconPath="/logos/BudgetBuilder_square.png" />
                         </div>
                         <span className="text-xs font-medium text-gray-500">
                           Walletgyde AI
@@ -665,7 +666,7 @@ export default function ChatbotPage() {
               </Button>
             </div>
             <div className="max-h-96 overflow-y-auto">
-              <PlaidLink onSuccess={handlePlaidSuccess} />
+              <PlaidLink onSuccess={() => {}} />
             </div>
           </div>
         )}
