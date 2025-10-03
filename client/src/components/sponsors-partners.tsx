@@ -13,7 +13,7 @@ const partners = [
     description: "Credit union collaborator"
   },
   {
-    name: "TBK Bank",
+    name: "",
     logo: "/logos/colorado_enterprise_fund.png",
     description: "Community Lending Partner"
   },
