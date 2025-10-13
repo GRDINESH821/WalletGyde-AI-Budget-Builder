@@ -720,11 +720,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Create a unique demo user identifier combining email and UID for complete isolation
       const uniqueDemoId = demoUserId ? `${userEmail}:${demoUserId}` : userEmail;
       
-      // Check rate limit: 20 questions per demo user
+      // Check rate limit: 10 questions per demo user (unlimited for EMP role)
       const questionCount = await storage.getDemoUserQuestionCount(uniqueDemoId);
-      if (questionCount >= 10) {
+      const userRole = await storage.getUserRole(userEmail);
+      
+      // Only enforce limit for non-EMP users
+      if (userRole !== 'EMP' && questionCount >= 10) {
         return res.status(429).json({ 
-          message: "Demo limit reached. You've used all 20 questions. Please sign up for full access.",
+          message: "Demo limit reached. You've used all 10 questions. Please sign up for full access.",
           isRateLimited: true 
         });
       }
@@ -1160,6 +1163,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Role management endpoint
+  app.post("/api/admin/set-role", async (req, res) => {
+    try {
+      const { email, role } = req.body;
+      
+      if (!email || !role) {
+        return res.status(400).json({ message: "Email and role are required" });
+      }
+      
+      if (!['USER', 'EMP', 'ADMIN'].includes(role)) {
+        return res.status(400).json({ message: "Invalid role. Must be USER, EMP, or ADMIN" });
+      }
+      
+      await storage.setUserRole(email, role);
+      res.json({ message: `Role set to ${role} for ${email}` });
+    } catch (error) {
+      console.error("Error setting user role:", error);
+      res.status(500).json({ message: "Failed to set user role" });
+    }
+  });
+
+  // Get user role endpoint
+  app.get("/api/user/:email/role", async (req, res) => {
+    try {
+      const { email } = req.params;
+      const role = await storage.getUserRole(email);
+      res.json({ email, role });
+    } catch (error) {
+      console.error("Error getting user role:", error);
+      res.status(500).json({ message: "Failed to get user role" });
+    }
+  });
+
   // Enhanced demo chat endpoints with bank integration
   app.get("/api/demo-chat/:userEmail/messages", async (req, res) => {
     try {
@@ -1189,9 +1225,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Create a unique demo user identifier combining email and UID for complete isolation
       const uniqueDemoId = demoUserId ? `${userEmail}:${demoUserId}` : userEmail;
 
-      // Check rate limit: 10 questions per demo user
+      // Check rate limit: 10 questions per demo user (unlimited for EMP role)
       const questionCount = await storage.getDemoUserQuestionCount(uniqueDemoId);
-      if (questionCount >= 10) {
+      const userRole = await storage.getUserRole(userEmail);
+      
+      // Only enforce limit for non-EMP users
+      if (userRole !== 'EMP' && questionCount >= 10) {
         return res.status(429).json({ 
           message: "Demo limit reached. You've used all 10 questions. Please sign up for full access.",
           isRateLimited: true 

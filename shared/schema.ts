@@ -107,6 +107,7 @@ export const betaSignups = pgTable("beta_signups", {
 export const demoEmails = pgTable("demo_emails", {
   id: serial("id").primaryKey(),
   email: varchar("email").notNull().unique(),
+  role: varchar("role").default("USER"), // USER, EMP (Employee), ADMIN
   firstUsed: timestamp("first_used").defaultNow().notNull(),
   lastUsed: timestamp("last_used").defaultNow().notNull(),
   totalSessions: integer("total_sessions").notNull().default(1),

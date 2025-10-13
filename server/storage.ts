@@ -67,6 +67,9 @@ export interface IStorage {
   addDemoMessage(message: InsertDemoChatMessage): Promise<DemoChatMessage>;
   getDemoUserQuestionCount(userEmail: string): Promise<number>;
   incrementDemoUserQuestionCount(userEmail: string): Promise<void>;
+  // Role management methods
+  getUserRole(userEmail: string): Promise<string>;
+  setUserRole(userEmail: string, role: string): Promise<void>;
   // Demo CSV methods
   saveDemoCsvUpload(userEmail: string, fileName: string, filePath: string, analyzedData: any): Promise<CsvUpload>;
   getDemoUserCsvUploads(userEmail: string): Promise<CsvUpload[]>;
@@ -321,6 +324,12 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getDemoUserQuestionCount(userEmail: string): Promise<number> {
+    // Check if user has EMP role - if so, return unlimited (0 means no limit)
+    const userRole = await this.getUserRole(userEmail);
+    if (userRole === 'EMP') {
+      return 0; // 0 means unlimited messages
+    }
+    
     const result = await db
       .select({ count: sql<number>`COUNT(*)` })
       .from(demoChatMessages)
@@ -548,6 +557,30 @@ export class DatabaseStorage implements IStorage {
       .where(eq(plaidTransactions.userId, userEmail))
       .orderBy(desc(plaidTransactions.date))
       .limit(limit);
+  }
+
+  // Role management methods
+  async getUserRole(userEmail: string): Promise<string> {
+    const [demoEmail] = await db
+      .select({ role: demoEmails.role })
+      .from(demoEmails)
+      .where(eq(demoEmails.email, userEmail));
+    return demoEmail?.role || 'USER';
+  }
+
+  async setUserRole(userEmail: string, role: string): Promise<void> {
+    try {
+      // Try to update existing demo email
+      await db
+        .update(demoEmails)
+        .set({ role })
+        .where(eq(demoEmails.email, userEmail));
+    } catch (error) {
+      // If demo email doesn't exist, create it with the role
+      await db
+        .insert(demoEmails)
+        .values({ email: userEmail, role });
+    }
   }
 }
 
